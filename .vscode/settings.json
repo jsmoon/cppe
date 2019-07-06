@@ -1,0 +1,77 @@
+{
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++17",
+
+    "testExplorer.addToEditorContextMenu": true,
+    "testExplorer.showOnRun": true,
+    "catch2TestExplorer.executables": [
+        {
+            "name": "${filename}",
+            "description": "${relDirpath}/",
+            "pattern": "{build,Build,BUILD,out,Out,OUT,.}/**/*{test,Test,TEST}*",
+        }
+    ],
+
+    "python.disableInstallationCheck": true,
+    "python.envFile": "${workspaceFolder}/.env",
+
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [],
+
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test*.py"
+    ],
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.nosetestArgs": [
+        "."
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": true,
+    "files.associations": {
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "initializer_list": "cpp",
+        "iomanip": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "new": "cpp",
+        "optional": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "tuple": "cpp",
+        "typeinfo": "cpp",
+        "utility": "cpp"
+    },
+}

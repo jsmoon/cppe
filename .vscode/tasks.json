@@ -1,0 +1,39 @@
+{
+    "tasks": [
+        {
+            "label": "g++ build active file",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "-Wall",
+                "-O2",
+                "-pthread",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}",
+                "-lgtest",
+                "-lgtest_main",
+            ],
+            // "options": {
+            //     "cwd": "/usr/bin"
+            // },
+            "problemMatcher": [
+                "$gcc",
+                "$eslint-compact"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "g++ test active file",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "args": [],
+            "dependsOn": [
+                "g++ build active file",
+            ],
+            "group": "test",
+        }
+    ],
+    "version": "2.0.0"
+}
