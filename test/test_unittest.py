@@ -1,4 +1,4 @@
-import inc_dec    # The code to test
+from scripts import inc_dec    # The code to test
 import unittest   # The test framework
 
 class Test_TestIncrementDecrement(unittest.TestCase):

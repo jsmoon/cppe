@@ -13,11 +13,8 @@
                 "-o",
                 "${workspaceFolder}/build/${fileBasenameNoExtension}",
                 "-lgtest",
-                "-lgtest_main",
+                "-lgtest_main"
             ],
-            // "options": {
-            //     "cwd": "/usr/bin"
-            // },
             "problemMatcher": [
                 "$gcc",
                 "$eslint-compact"
@@ -30,10 +27,10 @@
             "command": "${workspaceFolder}/build/${fileBasenameNoExtension}",
             "args": [],
             "dependsOn": [
-                "g++ build active file",
+                "g++ build active file"
             ],
-            "group": "test",
-        }
+            "group": "test"
+        },
     ],
     "version": "2.0.0"
 }

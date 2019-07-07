@@ -1,4 +1,4 @@
-import inc_dec    # The code to test
+from scripts import inc_dec    # The code to test
 
 def test_increment():
     assert inc_dec.increment(3) == 4

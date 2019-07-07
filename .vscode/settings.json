@@ -1,4 +1,8 @@
 {
+    "editor.renderWhitespace": "boundary",
+    "editor.wordWrap": "on",
+    "files.autoSave": "onFocusChange",
+
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.cppStandard": "c++17",
@@ -14,7 +18,6 @@
     ],
 
     "python.disableInstallationCheck": true,
-    "python.envFile": "${workspaceFolder}/.env",
 
     "python.linting.enabled": true,
     "python.linting.pylintArgs": [],
@@ -35,6 +38,7 @@
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": true,
+
     "files.associations": {
         "array": "cpp",
         "*.tcc": "cpp",

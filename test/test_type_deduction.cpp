@@ -41,4 +41,5 @@ TEST(TypeDeduction, decltype_basic) {
     EXPECT_EQ(typeid(float_point_decltype), typeid(double));
     EXPECT_EQ(typeid(character_decltype), typeid(char));
     EXPECT_EQ(typeid(string_decltype), typeid(const char[sizeof("STRING")]));
+    EXPECT_EQ(typeid(deduced_decltype), typeid(const char*));
 }
