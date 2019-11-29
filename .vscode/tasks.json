@@ -30,7 +30,7 @@
                 "g++ build active file"
             ],
             "group": "test"
-        },
+        }
     ],
     "version": "2.0.0"
 }

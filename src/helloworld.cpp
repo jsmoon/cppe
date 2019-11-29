@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <unistd.h>
+#include <cassert>
 
 
 // print arguments from command line. argv[0] has this program name.
@@ -17,41 +19,46 @@ void print_args(int const argc, char* argv[])
 }
 
 
-// print environment variables. last element of env[] is nullptr.
-void print_env(char** env)
+// print environment variables. last element of envp[] is nullptr.
+void print_env(char** envp)
 {
-    if (*env != nullptr) {
+    if (*envp != nullptr) {
         std::cout << "\n[ENVIRONMENT VARIABLES]" << std::endl;
     }
-    while (*env != nullptr) {
-        std::cout << *env << std::endl;
-        ++env;
+    while (*envp != nullptr) {
+        std::cout << *envp << std::endl;
+        ++envp;
     }
 }
 
 
 using words_t = std::vector<std::string>;
 // call by reference will be faster than call by value for compound types
-void print_msg(words_t const& msg)
+void print_msg(words_t const& words)
 {
-    for (auto& word : msg) {
+    for (auto& word : words) {
         std::cout << word << " ";
     }
     std::cout << std::endl;
 }
 
 
-int main(int argc, char* argv[], char** env)
+// char** envp is not a standard way.
+int main(int argc, char* argv[], char** envp)
 {
-    const words_t msg{"Hello", "C++", "World", "from", "VS Code!"};
-    print_msg(msg);
+    const words_t words{"Hello", "C++", "World", "from", "VS Code!"};
+    print_msg(words);
     print_msg({"and", "the C++ extension!"});
 
     if (argc > 1) {
         print_args(argc, argv);
         // compared by std::string::operator==(lhs,rhs) overriding.
         if (std::string(argv[1]) == "env") {
-            print_env(env);
+            print_env(envp);
+            // const char* environ[] defined at unistd.h. (mentioned at POSIX.1)
+            if (envp != environ) {
+                assert(envp == environ);
+            }
         }
         if (std::string(argv[1]) == "exit") {
             // program exit with failure code. (non-zero value, effective value:1-255)
