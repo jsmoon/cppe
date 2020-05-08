@@ -43,7 +43,7 @@ void print_msg(words_t const& words)
 }
 
 
-// char** envp is not a standard way.
+// NOTE: char** envp is not a standard way.
 int main(int argc, char* argv[], char** envp)
 {
     const words_t words{"Hello", "C++", "World", "from", "VS Code!"};
