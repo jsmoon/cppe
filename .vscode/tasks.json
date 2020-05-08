@@ -7,7 +7,6 @@
             "args": [
                 "-g",
                 "-Wall",
-                "-O2",
                 "-pthread",
                 "${file}",
                 "-o",
